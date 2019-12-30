@@ -16,12 +16,12 @@ const romToDec = (roman) => {
       romanSplit[1] = 0;
   };
 
-  for (index = length - 1; index >= 1; index--) {
-      if (eval(romanSplit[index]) <= eval(romanSplit[(index - 1)])) {
-        sum += eval(romanSplit[index]);
+  for (let i = length - 1; i >= 1; i--) {
+      if (eval(romanSplit[i]) <= eval(romanSplit[(i - 1)])) {
+        sum += eval(romanSplit[i]);
     } else {
-        sum += eval(romanSplit[index]) - eval(romanSplit[index - 1]);
-      index--;
+        sum += eval(romanSplit[i]) - eval(romanSplit[i - 1]);
+      i--;
     };
   };
   return sum;
